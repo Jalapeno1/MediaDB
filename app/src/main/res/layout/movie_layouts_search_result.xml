@@ -15,7 +15,7 @@
         android:layout_width="fill_parent"
         android:layout_height="120dp"
         android:text="This is a very long film title: part deaux"
-        android:textSize="28sp"
+        android:textSize="24sp"
         android:gravity="bottom"
         android:id="@+id/textView_RESULT_TITLE"
         android:layout_alignParentTop="true"
