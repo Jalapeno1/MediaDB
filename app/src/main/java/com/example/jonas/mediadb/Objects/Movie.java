@@ -10,7 +10,7 @@ import android.os.Parcelable;
 public class Movie implements Parcelable {
 
     private String Title;
-    private String Year;
+    private int Year;
     private String Rated;
     private String Released;
     private String Runtime;
@@ -28,7 +28,7 @@ public class Movie implements Parcelable {
     private String imdbID;
     private String Type;
 
-    public Movie(String title, String year, String rated, String released, String runtime,
+    public Movie(String title, int year, String rated, String released, String runtime,
                  String genre, String director, String writer, String actors, String plot,
                  String country, String awards, String poster, int metaScore, float imdbRating,
                  int imdbVotes, String imdbID, String type) {
@@ -56,7 +56,7 @@ public class Movie implements Parcelable {
         return Title;
     }
 
-    public String getYear() {
+    public int getYear() {
         return Year;
     }
 
@@ -126,7 +126,7 @@ public class Movie implements Parcelable {
 
     protected Movie(Parcel in) {
         Title = in.readString();
-        Year = in.readString();
+        Year = in.readInt();
         Rated = in.readString();
         Released = in.readString();
         Runtime = in.readString();
@@ -166,7 +166,7 @@ public class Movie implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(Title);
-        dest.writeString(Year);
+        dest.writeInt(Year);
         dest.writeString(Rated);
         dest.writeString(Released);
         dest.writeString(Runtime);
