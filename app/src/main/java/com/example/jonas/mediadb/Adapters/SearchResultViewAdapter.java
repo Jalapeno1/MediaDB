@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.jonas.mediadb.Objects.MovieSearchResult;
 import com.example.jonas.mediadb.R;
+import com.example.jonas.mediadb.Utilities.DownloadImageManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,7 +57,7 @@ public class SearchResultViewAdapter extends RecyclerView.Adapter<SearchResultVi
     @Override
     public void onBindViewHolder(MovieViewHolder movieViewHolder, int i) {
         if(movieViewHolder.movie_poster != null){
-            //new DownloadImageManager(movieViewHolder.movie_poster).execute(allMovies.get(i).getPoster());
+            new DownloadImageManager(movieViewHolder.movie_poster).execute(allMovieResults.get(i).getPoster());
         }
 
         if(movieViewHolder.movie_title != null){
