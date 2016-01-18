@@ -32,24 +32,33 @@ public class Movie implements Parcelable {
                  String genre, String director, String writer, String actors, String plot,
                  String country, String awards, String poster, int metaScore, float imdbRating,
                  int imdbVotes, String imdbID, String type) {
-        Title = title;
-        Year = year;
-        Rated = rated;
-        Released = released;
-        Runtime = runtime;
-        Genre = genre;
-        Director = director;
-        Writer = writer;
-        Actors = actors;
-        Plot = plot;
-        Country = country;
-        Awards = awards;
-        Poster = poster;
-        MetaScore = metaScore;
+        this.Title = title;
+        this.Year = year;
+        this.Rated = rated;
+        this.Released = released;
+        this.Runtime = runtime;
+        this.Genre = genre;
+        this.Director = director;
+        this.Writer = writer;
+        this.Actors = actors;
+        this.Plot = plot;
+        this.Country = country;
+        this.Awards = awards;
+        this.Poster = poster;
+        this.MetaScore = metaScore;
         this.imdbRating = imdbRating;
         this.imdbVotes = imdbVotes;
         this.imdbID = imdbID;
-        Type = type;
+        this.Type = type;
+    }
+
+    //small sample for search results
+    public Movie(String title, int year, String imdbID, String type, String poster) {
+        this.Title = title;
+        this.Year = year;
+        this.imdbID = imdbID;
+        this.Type = type;
+        this.Poster = poster;
     }
 
     public String getTitle() {
@@ -143,7 +152,6 @@ public class Movie implements Parcelable {
         imdbVotes = in.readInt();
         imdbID = in.readString();
         Type = in.readString();
-
     }
 
     public static final Creator<Movie> CREATOR = new Creator<Movie>() {
