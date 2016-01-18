@@ -5,7 +5,7 @@ import com.example.jonas.mediadb.R;
 /**
  * Created by Jonas on 18-01-2016.
  */
-public class MenuDrawerBehavior  {
+public class MenuDrawerBehavior   {
 
     public void onNavigationItemSelected(int id) {
 
