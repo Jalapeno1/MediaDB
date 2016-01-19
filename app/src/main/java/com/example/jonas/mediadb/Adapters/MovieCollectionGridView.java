@@ -1,5 +1,6 @@
 package com.example.jonas.mediadb.Adapters;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.jonas.mediadb.Activties.MovieDetailsActivity;
 import com.example.jonas.mediadb.Objects.Movie;
 import com.example.jonas.mediadb.R;
 import com.example.jonas.mediadb.Utilities.DownloadImageManager;
@@ -115,11 +117,11 @@ public class MovieCollectionGridView extends RecyclerView.Adapter<MovieCollectio
         movieViewHolder.rl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Movie MOVIE_TO_VIEW = allMovies.get(i);
-//
-//                Intent i = new Intent(v.getContext(), MovieDetailsActivity.class);
-//                i.putExtra("OBJECT_ZERO", MOVIE_TO_VIEW);
-//                v.getContext().startActivity(i);
+                Movie MOVIE_TO_VIEW = allMovies.get(i);
+
+                Intent i = new Intent(v.getContext(), MovieDetailsActivity.class);
+                //i.putExtra("OBJECT_ZERO", MOVIE_TO_VIEW);
+                v.getContext().startActivity(i);
             }
         });
 

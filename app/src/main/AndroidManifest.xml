@@ -19,15 +19,19 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.searchable"
-                android:resource="@xml/searchable">
-            </meta-data>
+                android:resource="@xml/searchable"></meta-data>
         </activity>
         <activity
             android:name=".Activties.SearchResultsActivityDrawer"
             android:label="@string/title_activity_search_results_activity_drawer"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activties.MovieDetailsActivity"
+            android:label="@string/title_activity_movie_details"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
