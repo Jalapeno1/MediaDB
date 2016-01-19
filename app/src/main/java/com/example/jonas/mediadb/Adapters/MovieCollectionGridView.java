@@ -117,10 +117,10 @@ public class MovieCollectionGridView extends RecyclerView.Adapter<MovieCollectio
         movieViewHolder.rl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Movie MOVIE_TO_VIEW = allMovies.get(i);
 
+                Movie selectedMovie = allMovies.get(i);
                 Intent i = new Intent(v.getContext(), MovieDetailsActivity.class);
-                //i.putExtra("OBJECT_ZERO", MOVIE_TO_VIEW);
+                i.putExtra("selectedMovie", selectedMovie);
                 v.getContext().startActivity(i);
             }
         });

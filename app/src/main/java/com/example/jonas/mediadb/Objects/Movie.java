@@ -9,21 +9,21 @@ import android.os.Parcelable;
 
 public class Movie implements Parcelable {
 
-    private String Title;
-    private String Year;
-    private String Rated;
-    private String Released;
-    private String Runtime;
-    private String Genre;
-    private String Director;
-    private String Writer;
+    private String Title; //
+    private String Year; //
+    private String Rated; //
+    private String Released; //
+    private String Runtime; //
+    private String Genre; //
+    private String Director; //
+    private String Writer; //
     private String Actors;
-    private String Plot;
+    private String Plot; //
     private String Country;
-    private String Awards;
+    private String Awards; //
     private String Poster;
-    private String MetaScore;
-    private String imdbRating;
+    private String MetaScore; //
+    private String imdbRating; //
     private String imdbVotes;
     private String imdbID;
     private String Type;
