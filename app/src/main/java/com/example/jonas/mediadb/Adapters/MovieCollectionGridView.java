@@ -118,7 +118,7 @@ public class MovieCollectionGridView extends RecyclerView.Adapter<MovieCollectio
             @Override
             public void onClick(View v) {
 
-                Movie selectedMovie = allMovies.get(i);
+                Movie selectedMovie = filteredMovies.get(i);
                 Intent i = new Intent(v.getContext(), MovieDetailsActivity.class);
                 i.putExtra("selectedMovie", selectedMovie);
                 v.getContext().startActivity(i);

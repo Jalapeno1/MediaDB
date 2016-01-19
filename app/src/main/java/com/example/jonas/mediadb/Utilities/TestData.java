@@ -53,14 +53,17 @@ public class TestData {
             Movie mov1 = gson.fromJson(new APIConnectionManager().execute("http://www.omdbapi.com/?t=" + "jurassic+park" + "&y=" + "1993" + "&plot=full&r=json").get(), Movie.class);
             Movie mov2 = gson.fromJson(new APIConnectionManager().execute("http://www.omdbapi.com/?t=" + "lord+of+the+rings" + "&y=" + "2001" + "&plot=full&r=json").get(), Movie.class);
             Movie mov3 = gson.fromJson(new APIConnectionManager().execute("http://www.omdbapi.com/?t=" + "evil+dead" + "&y=" + "2013" + "&plot=full&r=json").get(), Movie.class);
+            Movie mov4 = gson.fromJson(new APIConnectionManager().execute("http://www.omdbapi.com/?t=" + "spectre" + "&y=" + "2015" + "&plot=full&r=json").get(), Movie.class);
+            Movie mov5 = gson.fromJson(new APIConnectionManager().execute("http://www.omdbapi.com/?t=" + "the+martian" + "&y=" + "2015" + "&plot=full&r=json").get(), Movie.class);
+            Movie mov6 = gson.fromJson(new APIConnectionManager().execute("http://www.omdbapi.com/?t=" + "mad+max" + "&y=" + "2015" + "&plot=full&r=json").get(), Movie.class);
 
             getTestData_MoviesSaved.add(mov1);
             getTestData_MoviesSaved.add(mov2);
             getTestData_MoviesSaved.add(mov3);
+            getTestData_MoviesSaved.add(mov4);
+            getTestData_MoviesSaved.add(mov5);
+            getTestData_MoviesSaved.add(mov6);
 
-            Log.d("movie", mov1.getTitle());
-            Log.d("movie", mov2.getTitle());
-            Log.d("movie", mov3.getTitle());
         } catch (InterruptedException e) {
             Log.d("API Error", e.getMessage());
             e.printStackTrace();
