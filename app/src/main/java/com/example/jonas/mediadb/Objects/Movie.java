@@ -22,7 +22,7 @@ public class Movie implements Parcelable {
     private String Country;
     private String Awards; //
     private String Poster;
-    private String MetaScore; //
+    private String Metascore; //
     private String imdbRating; //
     private String imdbVotes;
     private String imdbID;
@@ -30,7 +30,7 @@ public class Movie implements Parcelable {
 
     public Movie(String title, String year, String rated, String released, String runtime,
                  String genre, String director, String writer, String actors, String plot,
-                 String country, String awards, String poster, String metaScore, String imdbRating,
+                 String country, String awards, String poster, String metascore, String imdbRating,
                  String imdbVotes, String imdbID, String type) {
         this.Title = title;
         this.Year = year;
@@ -45,7 +45,7 @@ public class Movie implements Parcelable {
         this.Country = country;
         this.Awards = awards;
         this.Poster = poster;
-        this.MetaScore = metaScore;
+        this.Metascore = metascore;
         this.imdbRating = imdbRating;
         this.imdbVotes = imdbVotes;
         this.imdbID = imdbID;
@@ -115,8 +115,8 @@ public class Movie implements Parcelable {
         return Poster;
     }
 
-    public String getMetaScore() {
-        return MetaScore;
+    public String getMetascore() {
+        return Metascore;
     }
 
     public String getImdbRating() {
@@ -153,7 +153,7 @@ public class Movie implements Parcelable {
         Country = in.readString();
         Awards = in.readString();
         Poster = in.readString();
-        MetaScore = in.readString();
+        Metascore = in.readString();
         imdbRating = in.readString();
         imdbVotes = in.readString();
         imdbID = in.readString();
@@ -192,7 +192,7 @@ public class Movie implements Parcelable {
         dest.writeString(Country);
         dest.writeString(Awards);
         dest.writeString(Poster);
-        dest.writeString(MetaScore);
+        dest.writeString(Metascore);
         dest.writeString(imdbRating);
         dest.writeString(imdbVotes);
         dest.writeString(imdbID);

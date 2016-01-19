@@ -17,6 +17,18 @@ import com.example.jonas.mediadb.Utilities.DownloadImageManager;
 public class MovieDetailsActivity extends AppCompatActivity {
 
     private ImageView posterImage;
+    private TextView detailsTitle;
+    private TextView detailsYear;
+    private TextView detailsGenre;
+    private TextView detailsRuntime;
+    private TextView detailsPlot;
+    private TextView detailsDirector;
+    private TextView detailsWriter;
+    private TextView detailsReleased;
+    private TextView detailsRated;
+    private TextView detailsImdbRating;
+    private TextView detailsMetaScore;
+    private TextView detailsAwards;
 
     private Movie selectedMovie;
 
@@ -45,8 +57,32 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
     private void setUpDetails(){
         posterImage = (ImageView)findViewById(R.id.posterView);
+        detailsTitle = (TextView)findViewById(R.id.textView_DETAILS_TITLE);
+        detailsYear = (TextView)findViewById(R.id.textView_DETAILS_YEAR);
+        detailsGenre = (TextView)findViewById(R.id.textView_DETAILS_GENRE);
+        detailsRuntime = (TextView)findViewById(R.id.textView_DETAILS_RUNTIME);
+        detailsPlot = (TextView)findViewById(R.id.textView_DETAILS_PLOT);
+        detailsDirector = (TextView)findViewById(R.id.textView_DETAILS_DIRECTOR);
+        detailsWriter = (TextView)findViewById(R.id.textView_DETAILS_WRITER);
+        detailsReleased = (TextView)findViewById(R.id.textView_DETAILS_RELEASED);
+        detailsRated = (TextView)findViewById(R.id.textView_DETAILS_RATED);
+        detailsImdbRating = (TextView)findViewById(R.id.textView_DETAILS_IMDB_RATING);
+        detailsMetaScore = (TextView)findViewById(R.id.textView_DETAILS_METASCORE);
+        detailsAwards = (TextView)findViewById(R.id.textView_DETAILS_AWARDS);
 
         new DownloadImageManager(posterImage).execute(selectedMovie.getPoster());
         setTitle(selectedMovie.getTitle());
+        detailsTitle.setText(selectedMovie.getTitle());
+        detailsYear.setText(selectedMovie.getYear());
+        detailsGenre.setText(selectedMovie.getGenre().replace(", ", " | "));
+        detailsRuntime.setText(selectedMovie.getRuntime());
+        detailsPlot.setText(selectedMovie.getPlot());
+        detailsDirector.setText(getString(R.string.details_director) + selectedMovie.getDirector());
+        detailsWriter.setText(getString(R.string.details_writer) + selectedMovie.getWriter());
+        detailsReleased.setText(getString(R.string.details_released) + selectedMovie.getReleased());
+        detailsRated.setText(getString(R.string.details_rated) + selectedMovie.getRated());
+        detailsImdbRating.setText(selectedMovie.getImdbRating());
+        detailsMetaScore.setText(selectedMovie.getMetascore());
+        detailsAwards.setText(selectedMovie.getAwards());
     }
 }

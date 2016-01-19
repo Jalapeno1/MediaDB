@@ -13,11 +13,18 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <TextView
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:text="Jurassic Something"
+            android:id="@+id/textView_DETAILS_TITLE"
+            android:layout_margin="@dimen/text_margin"
+            android:gravity="start"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="fill_horizontal"
-            android:layout_marginTop="15dp">
+            android:gravity="fill_horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -31,7 +38,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Horror | Fantasy | Drama"
-                android:id="@+id/textView_DETAILS_TITLE"
+                android:id="@+id/textView_DETAILS_GENRE"
                 android:layout_margin="@dimen/text_margin"
                 android:gravity="center"/>
 
