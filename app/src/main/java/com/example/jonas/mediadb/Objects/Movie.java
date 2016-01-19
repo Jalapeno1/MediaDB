@@ -23,14 +23,14 @@ public class Movie implements Parcelable {
     private String Awards;
     private String Poster;
     private int MetaScore;
-    private float imdbRating;
+    private double imdbRating;
     private int imdbVotes;
     private String imdbID;
     private String Type;
 
     public Movie(String title, int year, String rated, String released, String runtime,
                  String genre, String director, String writer, String actors, String plot,
-                 String country, String awards, String poster, int metaScore, float imdbRating,
+                 String country, String awards, String poster, int metaScore, double imdbRating,
                  int imdbVotes, String imdbID, String type) {
         this.Title = title;
         this.Year = year;
@@ -117,7 +117,7 @@ public class Movie implements Parcelable {
         return MetaScore;
     }
 
-    public float getImdbRating() {
+    public double getImdbRating() {
         return imdbRating;
     }
 
@@ -148,7 +148,7 @@ public class Movie implements Parcelable {
         Awards = in.readString();
         Poster = in.readString();
         MetaScore = in.readInt();
-        imdbRating = in.readFloat();
+        imdbRating = in.readDouble();
         imdbVotes = in.readInt();
         imdbID = in.readString();
         Type = in.readString();
@@ -187,7 +187,7 @@ public class Movie implements Parcelable {
         dest.writeString(Awards);
         dest.writeString(Poster);
         dest.writeInt(MetaScore);
-        dest.writeFloat(imdbRating);
+        dest.writeDouble(imdbRating);
         dest.writeInt(imdbVotes);
         dest.writeString(imdbID);
         dest.writeString(Type);

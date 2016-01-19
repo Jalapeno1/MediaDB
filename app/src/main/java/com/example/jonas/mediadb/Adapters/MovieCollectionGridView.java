@@ -69,13 +69,12 @@ public class MovieCollectionGridView extends RecyclerView.Adapter<MovieCollectio
             if (constraint!=null && constraint.length()>0) {
                 ArrayList<Movie> tempList = new ArrayList<>();
 
-                Log.d("Filter", constraint.toString());
+                constraint = constraint.toString().toLowerCase();
 
                 // search content in movie list
                 for (Movie movie : allMovies) {
-                    if (movie.getTitle().toLowerCase().contains(constraint.toString().toLowerCase())) {
+                    if (movie.getTitle().toLowerCase().contains(constraint) || Integer.toString(movie.getYear()).contains(constraint)) {
                         tempList.add(movie);
-                        Log.d("Filtered", Integer.toString(movie.getYear()));
                     }
                 }
 

@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity
 
         rv.setHasFixedSize(true);
 
-        movies = new TestData().getMovies; //for testing
+        movies = new TestData().getTestData_MoviesSaved; //for testing
 
         adapter = new MovieCollectionGridView(movies);
         rv.setAdapter(adapter);

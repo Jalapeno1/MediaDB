@@ -61,7 +61,7 @@ public class SearchResultsActivityDrawer extends AppCompatActivity
 
         rv.setHasFixedSize(true);
 
-        movies = new TestData().getMovies; //for testing
+        movies = new TestData().getTestData_MoviesFromSearch; //for testing
 
         SearchResultViewAdapter adapter = new SearchResultViewAdapter(movies);
         rv.setAdapter(adapter);
