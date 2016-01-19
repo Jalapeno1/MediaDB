@@ -28,6 +28,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
     private TextView detailsImdbRating;
     private TextView detailsMetaScore;
     private TextView detailsAwards;
+    private TextView detailsActors;
 
     private Movie selectedMovie;
 
@@ -67,6 +68,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
         detailsImdbRating = (TextView)findViewById(R.id.textView_DETAILS_IMDB_RATING);
         detailsMetaScore = (TextView)findViewById(R.id.textView_DETAILS_METASCORE);
         detailsAwards = (TextView)findViewById(R.id.textView_DETAILS_AWARDS);
+        detailsActors = (TextView)findViewById(R.id.textView_DETAILS_ACTORS);
 
         new DownloadImageManager(posterImage).execute(selectedMovie.getPoster());
         setTitle(selectedMovie.getTitle());
@@ -79,7 +81,8 @@ public class MovieDetailsActivity extends AppCompatActivity {
         detailsReleased.setText(getString(R.string.details_released) + selectedMovie.getReleased());
         detailsRated.setText(getString(R.string.details_rated) + selectedMovie.getRated());
         detailsImdbRating.setText(selectedMovie.getImdbRating());
-        detailsMetaScore.setText(selectedMovie.getMetascore());
+        detailsMetaScore.setText(selectedMovie.getMetascore() + "/100");
         detailsAwards.setText(selectedMovie.getAwards());
+        detailsActors.setText(getString(R.string.details_actors) + selectedMovie.getActors());
     }
 }

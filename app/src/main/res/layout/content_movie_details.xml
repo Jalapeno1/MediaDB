@@ -12,41 +12,58 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="#F0F0F0">
 
-            <TextView
-                android:layout_width="260dp"
-                android:layout_height="wrap_content"
-                android:text="Jurassic Something"
-                android:id="@+id/textView_DETAILS_TITLE"
-                android:layout_margin="@dimen/text_margin"
-                android:gravity="start"/>
-
-        <LinearLayout
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="fill_horizontal"
-            android:weightSum="4">
+            android:layout_height="wrap_content"
+            android:id="@+id/cvMainDetails"
+            card_view:cardUseCompatPadding="true"
+            android:layout_margin="@dimen/cardview_default_elevation">
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Horror | Fantasy | Drama"
-                android:id="@+id/textView_DETAILS_GENRE"
-                android:layout_margin="@dimen/text_margin"
-                android:gravity="start"
-                android:layout_weight="3"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_margin="@dimen/text_margin">
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="220 min"
-                android:id="@+id/textView_DETAILS_RUNTIME"
-                android:layout_margin="@dimen/text_margin"
-                android:gravity="end"
-                android:layout_weight="1"/>
+                <TextView
+                    android:layout_width="260dp"
+                    android:layout_height="wrap_content"
+                    android:text="Jurassic Something"
+                    android:textSize="18dp"
+                    android:id="@+id/textView_DETAILS_TITLE"
+                    android:gravity="start"
+                    android:layout_marginBottom="5dp"/>
 
-        </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="fill_horizontal"
+                    android:weightSum="4">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Horror | Fantasy | Drama"
+                        android:id="@+id/textView_DETAILS_GENRE"
+                        android:gravity="start"
+                        android:layout_weight="3"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="220 min"
+                        android:id="@+id/textView_DETAILS_RUNTIME"
+                        android:gravity="end"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
             android:layout_width="wrap_content"
@@ -65,7 +82,7 @@
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/cvDetails"
             card_view:cardUseCompatPadding="true"
@@ -74,75 +91,129 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:weightSum="4">
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_margin="@dimen/text_margin"
-                    android:gravity="left"
-                    android:layout_weight="2">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="4">
 
-                    <TextView
-                        android:layout_width="match_parent"
+                    <LinearLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Director: \nSteven Spielberg"
-                        android:id="@+id/textView_DETAILS_DIRECTOR"
-                        android:layout_marginBottom="5dp"/>
+                        android:orientation="vertical"
+                        android:layout_margin="@dimen/text_margin"
+                        android:gravity="left"
+                        android:layout_weight="2">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Writer: \nWierd Al, Allan Davies, Dan Ryckert, Someone Underpaid"
-                        android:id="@+id/textView_DETAILS_WRITER"
-                        android:layout_marginBottom="5dp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Director: \nSteven Spielberg"
+                            android:id="@+id/textView_DETAILS_DIRECTOR"
+                            android:layout_marginBottom="5dp"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Released 11 Jun 1993"
-                        android:id="@+id/textView_DETAILS_RELEASED"
-                        android:layout_marginBottom="5dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Writer: \nWierd Al, Allan Davies, Dan Ryckert, Someone Underpaid"
+                            android:id="@+id/textView_DETAILS_WRITER"
+                            android:layout_marginBottom="5dp"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Released 11 Jun 1993"
+                            android:id="@+id/textView_DETAILS_RELEASED"
+                            android:layout_marginBottom="5dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rated PG-13"
+                            android:id="@+id/textView_DETAILS_RATED"
+                            android:layout_marginBottom="5dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Rated PG-13"
-                        android:id="@+id/textView_DETAILS_RATED"
-                        android:layout_marginBottom="5dp" />
+                        android:orientation="vertical"
+                        android:layout_margin="@dimen/text_margin"
+                        android:layout_weight="2">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp">
+
+                            <ImageView
+                                android:layout_width="61.2dp"
+                                android:layout_height="30dp"
+                                android:background="@drawable/imdb"
+                                android:layout_marginEnd="5dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="imdb Rating: 8.1"
+                                android:textSize="20dp"
+                                android:id="@+id/textView_DETAILS_IMDB_RATING"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:background="@drawable/metacritic"
+                                android:layout_marginEnd="5dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="MetaScore: 81"
+                                android:textSize="20dp"
+                                android:id="@+id/textView_DETAILS_METASCORE"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp">
+
+                            <ImageView
+                                android:layout_width="33.6dp"
+                                android:layout_height="76.5dp"
+                                android:background="@drawable/award"
+                                android:layout_marginEnd="7dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Won 3 Oscars. Another 26 wins and 16 nominations."
+                                android:id="@+id/textView_DETAILS_AWARDS"
+                                android:layout_gravity="bottom"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="0dp"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
+                    android:text="Starring: Something, someone, that one"
+                    android:id="@+id/textView_DETAILS_ACTORS"
                     android:layout_margin="@dimen/text_margin"
-                    android:layout_weight="2">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="imdb Rating: 8.1"
-                        android:id="@+id/textView_DETAILS_IMDB_RATING"
-                        android:layout_marginBottom="5dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="MetaScore: 81"
-                        android:id="@+id/textView_DETAILS_METASCORE"
-                        android:layout_marginBottom="5dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Won 3 Oscars. Another 26 wins and 16 nominations."
-                        android:id="@+id/textView_DETAILS_AWARDS"
-                        android:layout_marginBottom="5dp"/>
-
-                </LinearLayout>
+                    android:layout_marginBottom="5dp"/>
 
             </LinearLayout>
 

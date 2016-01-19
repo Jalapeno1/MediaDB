@@ -11,4 +11,5 @@
     <string name="details_writer">"Writer: "</string>
     <string name="details_released">"Released "</string>
     <string name="details_rated">"Rated "</string>
+    <string name="details_actors">"Starring "</string>
 </resources>
