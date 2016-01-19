@@ -63,6 +63,12 @@ public class TestData {
             getTestData_MoviesSaved.add(mov4);
             getTestData_MoviesSaved.add(mov5);
             getTestData_MoviesSaved.add(mov6);
+            getTestData_MoviesSaved.add(mov1);
+            getTestData_MoviesSaved.add(mov2);
+            getTestData_MoviesSaved.add(mov3);
+            getTestData_MoviesSaved.add(mov4);
+            getTestData_MoviesSaved.add(mov5);
+            getTestData_MoviesSaved.add(mov6);
 
         } catch (InterruptedException e) {
             Log.d("API Error", e.getMessage());
