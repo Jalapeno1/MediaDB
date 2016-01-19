@@ -89,11 +89,6 @@ public class MovieCollectionGridView extends RecyclerView.Adapter<MovieCollectio
             return filterResults;
         }
 
-        /**
-         * Notify about filtered list to ui
-         * @param constraint text
-         * @param results filtered result
-         */
         @SuppressWarnings("unchecked")
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results) {
