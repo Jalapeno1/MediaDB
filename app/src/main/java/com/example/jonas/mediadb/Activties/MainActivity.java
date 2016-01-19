@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity
 
     private ArrayList<Movie> movies;
     private RecyclerView rv;
+    private MovieCollectionGridView adapter;
 
 
     @Override
@@ -70,7 +71,7 @@ public class MainActivity extends AppCompatActivity
 
         movies = new TestData().getMovies; //for testing
 
-        MovieCollectionGridView adapter = new MovieCollectionGridView(movies);
+        adapter = new MovieCollectionGridView(movies);
         rv.setAdapter(adapter);
     }
 
@@ -88,9 +89,28 @@ public class MainActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.search_menu, menu);
         // Retrieve the SearchView and plug it into SearchManager
-        final SearchView searchView = (SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.action_search));
+
+        //final SearchView searchView = (SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.action_search));
+
         SearchManager searchManager = (SearchManager) getSystemService(SEARCH_SERVICE);
+        MenuItem searchMenuItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) searchMenuItem.getActionView();
+
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        searchView.setSubmitButtonEnabled(true);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                adapter.getFilter().filter(newText);
+                return false;
+            }
+        });
+
         return true;
     }
 
