@@ -65,7 +65,7 @@ public class SearchResultViewAdapter extends RecyclerView.Adapter<SearchResultVi
         }
 
         if(movieViewHolder.movie_year != null){
-            movieViewHolder.movie_year.setText(Integer.toString(allMovieResults.get(i).getYear()));
+            movieViewHolder.movie_year.setText(allMovieResults.get(i).getYear());
         }
 
     }

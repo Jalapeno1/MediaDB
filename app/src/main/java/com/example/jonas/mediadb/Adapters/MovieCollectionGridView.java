@@ -75,7 +75,7 @@ public class MovieCollectionGridView extends RecyclerView.Adapter<MovieCollectio
 
                 // search content in movie list
                 for (Movie movie : allMovies) {
-                    if (movie.getTitle().toLowerCase().contains(constraint) || Integer.toString(movie.getYear()).contains(constraint)
+                    if (movie.getTitle().toLowerCase().contains(constraint) || movie.getYear().contains(constraint)
                             || movie.getGenre().toLowerCase().contains(constraint) || movie.getDirector().toLowerCase().contains(constraint)){
                         tempList.add(movie);
                     }
@@ -137,7 +137,7 @@ public class MovieCollectionGridView extends RecyclerView.Adapter<MovieCollectio
         }
 
         if(movieViewHolder.movie_year != null){
-            movieViewHolder.movie_year.setText(Integer.toString(filteredMovies.get(i).getYear()));
+            movieViewHolder.movie_year.setText(filteredMovies.get(i).getYear());
         }
 
         movieViewHolder.rl.setOnLongClickListener(new View.OnLongClickListener() {

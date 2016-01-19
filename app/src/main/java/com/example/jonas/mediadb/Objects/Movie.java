@@ -10,7 +10,7 @@ import android.os.Parcelable;
 public class Movie implements Parcelable {
 
     private String Title;
-    private int Year;
+    private String Year;
     private String Rated;
     private String Released;
     private String Runtime;
@@ -22,16 +22,16 @@ public class Movie implements Parcelable {
     private String Country;
     private String Awards;
     private String Poster;
-    private int MetaScore;
-    private double imdbRating;
-    private int imdbVotes;
+    private String MetaScore;
+    private String imdbRating;
+    private String imdbVotes;
     private String imdbID;
     private String Type;
 
-    public Movie(String title, int year, String rated, String released, String runtime,
+    public Movie(String title, String year, String rated, String released, String runtime,
                  String genre, String director, String writer, String actors, String plot,
-                 String country, String awards, String poster, int metaScore, double imdbRating,
-                 int imdbVotes, String imdbID, String type) {
+                 String country, String awards, String poster, String metaScore, String imdbRating,
+                 String imdbVotes, String imdbID, String type) {
         this.Title = title;
         this.Year = year;
         this.Rated = rated;
@@ -53,7 +53,7 @@ public class Movie implements Parcelable {
     }
 
     //small sample for search results
-    public Movie(String title, int year, String imdbID, String type, String poster) {
+    public Movie(String title, String year, String imdbID, String type, String poster) {
         this.Title = title;
         this.Year = year;
         this.imdbID = imdbID;
@@ -61,11 +61,13 @@ public class Movie implements Parcelable {
         this.Poster = poster;
     }
 
+    public Movie(){}
+
     public String getTitle() {
         return Title;
     }
 
-    public int getYear() {
+    public String getYear() {
         return Year;
     }
 
@@ -113,15 +115,15 @@ public class Movie implements Parcelable {
         return Poster;
     }
 
-    public int getMetaScore() {
+    public String getMetaScore() {
         return MetaScore;
     }
 
-    public double getImdbRating() {
+    public String getImdbRating() {
         return imdbRating;
     }
 
-    public int getImdbVotes() {
+    public String getImdbVotes() {
         return imdbVotes;
     }
 
@@ -133,9 +135,13 @@ public class Movie implements Parcelable {
         return Type;
     }
 
+    public void setImdbID(String imdbID) {
+        this.imdbID = imdbID;
+    }
+
     protected Movie(Parcel in) {
         Title = in.readString();
-        Year = in.readInt();
+        Year = in.readString();
         Rated = in.readString();
         Released = in.readString();
         Runtime = in.readString();
@@ -147,9 +153,9 @@ public class Movie implements Parcelable {
         Country = in.readString();
         Awards = in.readString();
         Poster = in.readString();
-        MetaScore = in.readInt();
-        imdbRating = in.readDouble();
-        imdbVotes = in.readInt();
+        MetaScore = in.readString();
+        imdbRating = in.readString();
+        imdbVotes = in.readString();
         imdbID = in.readString();
         Type = in.readString();
     }
@@ -174,7 +180,7 @@ public class Movie implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(Title);
-        dest.writeInt(Year);
+        dest.writeString(Year);
         dest.writeString(Rated);
         dest.writeString(Released);
         dest.writeString(Runtime);
@@ -186,9 +192,9 @@ public class Movie implements Parcelable {
         dest.writeString(Country);
         dest.writeString(Awards);
         dest.writeString(Poster);
-        dest.writeInt(MetaScore);
-        dest.writeDouble(imdbRating);
-        dest.writeInt(imdbVotes);
+        dest.writeString(MetaScore);
+        dest.writeString(imdbRating);
+        dest.writeString(imdbVotes);
         dest.writeString(imdbID);
         dest.writeString(Type);
     }
