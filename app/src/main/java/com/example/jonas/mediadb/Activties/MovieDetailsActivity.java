@@ -18,7 +18,6 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
     private ImageView posterImage;
     private TextView detailsTitle;
-    private TextView detailsYear;
     private TextView detailsGenre;
     private TextView detailsRuntime;
     private TextView detailsPlot;
@@ -58,7 +57,6 @@ public class MovieDetailsActivity extends AppCompatActivity {
     private void setUpDetails(){
         posterImage = (ImageView)findViewById(R.id.posterView);
         detailsTitle = (TextView)findViewById(R.id.textView_DETAILS_TITLE);
-        detailsYear = (TextView)findViewById(R.id.textView_DETAILS_YEAR);
         detailsGenre = (TextView)findViewById(R.id.textView_DETAILS_GENRE);
         detailsRuntime = (TextView)findViewById(R.id.textView_DETAILS_RUNTIME);
         detailsPlot = (TextView)findViewById(R.id.textView_DETAILS_PLOT);
@@ -72,8 +70,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
         new DownloadImageManager(posterImage).execute(selectedMovie.getPoster());
         setTitle(selectedMovie.getTitle());
-        detailsTitle.setText(selectedMovie.getTitle());
-        detailsYear.setText(selectedMovie.getYear());
+        detailsTitle.setText(selectedMovie.getTitle() + " (" + selectedMovie.getYear() + ")");
         detailsGenre.setText(selectedMovie.getGenre().replace(", ", " | "));
         detailsRuntime.setText(selectedMovie.getRuntime());
         detailsPlot.setText(selectedMovie.getPlot());
